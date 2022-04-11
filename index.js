@@ -277,25 +277,27 @@ function main(){
             //
             // Build / Click link
             //
-            const data = await get_media(media.key, media.attachments[0]);
+           //  const data = await get_media(media.key, media.attachments[0]);
+            const data = "https://www.tadpoles.com/remote/v1/obj_attachment?obj=${media.key}&key=${media.attachments[0]}&download=true"
             
             //
             // Wait for 3 seconds
             //
-            // await new Promise((resolve) => setTimeout(resolve,3000));
+            await new Promise((resolve) => setTimeout(resolve,1000));
             
             //
             // Let the user know where we are...
             // and how many results were returned...
             //
             var paragraph = document.createElement("p");
-            paragraph.innerText = `DOWNLOADING: ${idx} of ${document.all_media.length} - (${new Date(media.event_date).toString()})`;
+//            paragraph.innerText = `DOWNLOADING: ${idx} of ${document.all_media.length} - ${data} (${new Date(media.event_date).toString()})`;
+            paragraph.innerText = `https://www.tadpoles.com/remote/v1/obj_attachment?obj=${media.key}&key=${media.attachments[0]}&download=true`
             document.querySelector("#status").prepend(paragraph);
 
 
         }
         
-        document.querySelector("body").innerHTML = "<h1>DONE!</h1>"
+        //document.querySelector("body").innerHTML = "<h1>DONE!</h1>"
         
         return new Promise((res, rej) => {res(true)});
         
