@@ -115,16 +115,16 @@ async function get_media(key, attachment){
     
     let url = `https://www.tadpoles.com/remote/v1/obj_attachment?obj=${key}&key=${attachment}&download=true`;
     
-    var link = document.createElement("a");
-    link.setAttribute("href", url);
-    link.setAttribute("download", "WHOA");
-    var paragraph = document.createElement("p");
-    paragraph.innerText = `DOWNLOADING: ${link} ${paragraph}`;
+    //var link = document.createElement("a");
+    //link.setAttribute("href", url);
+    //link.setAttribute("download", "WHOA");
+    //var paragraph = document.createElement("p");
+    //paragraph.innerText = `DOWNLOADING: ${link} ${paragraph}`;
 
     //link.click();
     
     //return new Promise((res, rej) => {res(true)})
-    return link
+    return url
 
 }
 
